@@ -8,4 +8,11 @@ class Employee < ActiveRecord::Base
   validates :hourly_rate, numericality: { greater_than: 40 }
   validates :hourly_rate, numericality: { less_than: 200 }
 
+  before_save :add_password
+
+  private
+  def add_password
+    self.password = (0...8).map { (65 + rand(26)).chr }.join
+  end
+
 end

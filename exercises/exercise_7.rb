@@ -10,7 +10,7 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
-name = gets.chomp
+name = 'Vancouver'
 
 store = Store.create(name: name, annual_revenue: -50, mens_apparel: true, womens_apparel: false) # => annual_revenue error
 puts store.errors[:annual_revenue]
